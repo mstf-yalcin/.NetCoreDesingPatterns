@@ -1,0 +1,31 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+    var count = 0;
+}
+
+@model List<AppUser>
+
+
+@foreach (var item in Model)
+{
+
+    count+=1;
+
+
+    if (count == 1 || count % 5 == 1)
+    {
+        @Html.Raw("<div class='row row-cols-1 raw-cols-md5 g-4'>")
+        
+    }
+
+    <div class="col">
+        <user-card appuser="@item" test="1"></user-card>
+    </div>
+
+    if(count %5 ==0)
+    {
+        @Html.Raw("</div>");
+    }
+
+
+}

@@ -1,0 +1,11 @@
+﻿@{
+    ViewData["Title"] = "Index";
+}
+@model Settings
+
+<form asp-controller="Settings" asp-action="ChangeDatabase" method="post">
+    <select asp-for="DataBaseType" asp-items="Html.GetEnumSelectList<EDataBaseType>()"></select>
+
+    <button type="submit">Save</button>
+</form>
+
